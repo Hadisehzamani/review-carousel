@@ -33,12 +33,7 @@ nextBtn.addEventListener('click', function(){
     if(index > reviewArr.length-1){
         index = 0;
     }
-    reviewBox.innerHTML = `<div class="img">
-                                <img src="${reviewArr[index].img}" alt="">
-                            </div>
-                            <p class="name">${reviewArr[index].name}</p>
-                            <p class="job-title">${reviewArr[index].job}</p>
-                            <p class="explanation">${reviewArr[index].text}</p>                            `
+    cardTexts()
 })
 
 prevBtn.addEventListener('click',function(){
@@ -46,10 +41,15 @@ prevBtn.addEventListener('click',function(){
     if(index < 0){
         index = reviewArr.length-1
     }
+    cardTexts()
+})
+
+
+function cardTexts(){
     reviewBox.innerHTML = `<div class="img">
                                 <img src="${reviewArr[index].img}" alt="">
                             </div>
                             <p class="name">${reviewArr[index].name}</p>
                             <p class="job-title">${reviewArr[index].job}</p>
                             <p class="explanation">${reviewArr[index].text}</p>                            `
-})
+}
